@@ -1,13 +1,10 @@
-// import React from 'react';
-import Header from "./Components/Header";
-import Navbar from "./Components/Navbar";
+import Home from "./Pages/Home";
 
 function App() {
 
   return (
     <>
-      <Navbar/>
-      <Header/>
+      <Home/>
     </>
   )
 }

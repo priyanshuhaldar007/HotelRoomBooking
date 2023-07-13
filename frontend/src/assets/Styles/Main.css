@@ -1,7 +1,19 @@
 /* fonts */
 @import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
 @import url('https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css');
-@import url('https://fonts.googleapis.com/css2?family=Allison&family=Jim+Nightshade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Allison&family=Jim+Nightshade&display=swap');
+
+/* colors */
+:root{
+    --darkyellow:#F5A623;
+    --lightyellow:#FFDA7B;
+    --blue:#32264C;
+    --orange:#E16F4B;
+    --white:#ffffff;
+    --lightgrey:#D9D9D9;
+    --darkgrey:#3B3D40;
+    --black:#000000;
+}
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +23,8 @@ ul {
     list-style-type: none;
 }
 .fc-white{
-    color: #fff;
+    color: var(--white);
 }
 .fc-black{
-    color: #000;
+    color: var(--black);
 }

@@ -1,4 +1,4 @@
-import '../assets/Styles/Header.css';
+import '../assets/Styles/Home.css';
 import Header1 from '../assets/Imgs/Header1.png'
 
 export default function Header() {
