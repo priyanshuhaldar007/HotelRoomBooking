@@ -1,0 +1,45 @@
+.Nav,
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Nav {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    background: linear-gradient(
+        180deg,
+        #32264c -33.2%,
+        rgba(50, 38, 76, 0) 134.98%
+    );
+    font-family: "Allison", cursive;
+    font-family: "Jim Nightshade", cursive;
+    /* font-family: 'Jeju Gothic', sans-serif; */
+    /* font-family: 'Jeju Myeongjo', serif; */
+}
+.Nav .logo {
+    position: relative;
+    font-size: 2rem;
+}
+.Nav .logo span:nth-child(2) {
+    position: absolute;
+    top: 1.25rem;
+    left: 2rem;
+    font-size: 1.2rem;
+    width: 9rem;
+    font-family: 'Jeju Myeongjo', serif;
+}
+.menu {
+    column-gap: 2rem;
+}
+.btn {
+    background: #f5a623;
+    border-radius: 0.8rem;
+    padding: 0.5rem 1rem;
+    font-family: 'Jeju Gothic', sans-serif;
+}
