@@ -1,9 +1,9 @@
 import '../assets/Styles/Home.css';
 import Header1 from '../assets/Imgs/Header1.png'
 
-export default function Header() {
+export default function Header({refProps}) {
     return (
-        <div className="Header">
+        <div id='Home' className="Header" ref={refProps}>
             <div className="imgContainer">
                 <img src={Header1} alt="" />
             </div>

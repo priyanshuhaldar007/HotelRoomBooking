@@ -4,9 +4,9 @@ import HomeAbout2 from "../assets/Imgs/HomeAbout2.png";
 import HomeAbout3 from "../assets/Imgs/HomeAbout3.png";
 import HomeAbout4 from "../assets/Imgs/HomeAbout4.png";
 
-export default function About() {
+export default function About({refProps}) {
     return (
-        <div className="About">
+        <div id='About' className="About SectionParent" ref={refProps}>
             <div className="aboutImgContainer">
                 <img src={HomeAbout1} alt="" />
                 <img src={HomeAbout3} alt="" />
