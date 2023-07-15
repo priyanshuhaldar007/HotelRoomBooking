@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../assets/Styles/Home.css";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -35,10 +36,14 @@ export default function HomeInput() {
             <div className="InputContainer">
                 <label htmlFor="CityName">Where do you wanna go?</label>
                 <div className="wrapper">
-                    <input type="text" name="CityName" placeholder="Enter City Name"/>
-                    <button>
+                    <input
+                        type="text"
+                        name="CityName"
+                        placeholder="Enter City Name"
+                    />
+                    <Link to='/hotels' className="button">
                         <BsArrowRight />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

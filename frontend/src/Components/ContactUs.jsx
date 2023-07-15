@@ -1,5 +1,6 @@
 import "../assets/Styles/Home.css";
 import ContactUsPng from "../assets/Imgs/ContactUs.png";
+import PropTypes from 'prop-types'
 
 export default function ContactUs({ refProps }) {
     return (
@@ -30,4 +31,8 @@ export default function ContactUs({ refProps }) {
             </div>
         </div>
     );
+}
+
+ContactUs.propTypes = {
+    refProps:PropTypes.object,
 }

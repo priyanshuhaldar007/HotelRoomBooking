@@ -1,0 +1,67 @@
+.header2Content {
+    position: relative;
+    height: 10rem;
+    background: rgba(217, 217, 217, 0.25);
+    backdrop-filter: blur(2px);
+    top: -5rem;
+    display: grid;
+    place-items: center;
+}
+.searchCityParent {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: center;
+}
+.searchCityParent input {
+    background: rgba(217, 217, 217, 0.65);
+    padding: 1.5rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    width: 80%;
+    font-family: "Alice", serif;
+}
+.searchCityParent button {
+    outline: none;
+    border: none;
+    background: var(--darkyellow);
+    padding: 1.5rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    position: relative;
+    left: -0.7rem;
+    cursor: pointer;
+    font-family: "Alice", serif;
+    transition: 0.5s ease-in-out;
+}
+.searchCityParent button:hover{
+    background: var(--lightyellow);
+} 
+.HotelListParent{
+    display: grid;
+    place-items: center;
+}
+.ListContainer{
+    text-align: left;
+    padding: 1rem 5rem;
+    width: 80%;
+}
+.ListContainer .controllers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ListContainer .controllers>div{
+    background: var(--lightgrey);
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.ListContainer .controllers>div>span svg{
+    position: relative;
+    top: 0.2rem;
+    margin-right: 0.5rem;
+}

@@ -231,7 +231,7 @@ figure:hover img {
     padding: 0.5rem 1rem;
     padding-right: 1.5rem;
 }
-.HomeInput .InputContainer .wrapper button {
+.HomeInput .InputContainer .wrapper .button {
     color: var(--white);
     background: var(--orange);
     outline: none;
@@ -241,6 +241,7 @@ figure:hover img {
     border-radius: 1rem;
     position: relative;
     left: -1rem;
+    text-decoration: none;
     top: 0.1rem;
 }
 /* Contact Us */
