@@ -29,7 +29,6 @@ export default function HotelCardCarousel() {
         }}
         spaceBetween={10}
         navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
         modules={[Autoplay, FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
@@ -66,8 +65,8 @@ export default function HotelCardCarousel() {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={6}
+        // spaceBetween={10}
+        slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
