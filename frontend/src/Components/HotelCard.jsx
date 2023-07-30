@@ -1,11 +1,10 @@
 import '../assets/Styles/HotelsSearch.css'
-import HotelCardCarousel from './HotelCardCarousel'
 
 export default function HotelCard() {
   return (
     <div className='HotelCard'>
         <div className="carouselContainer">
-            <HotelCardCarousel/>
+          <img src="https://img.freepik.com/free-photo/beautiful-luxury-outdoor-swimming-pool-hotel-resort_74190-7433.jpg" alt="" />
         </div>
         <div className="HotelData"></div>
         <div className="HotelFeatues"></div>
