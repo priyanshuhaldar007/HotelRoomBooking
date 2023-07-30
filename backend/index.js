@@ -1,12 +1,12 @@
 const express = require("express");
-// const swaggerjsdoc = require("swagger-jsdoc");
-const swaggerui = require("swagger-ui-express");
-const swagger = require("./swagger.yaml");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoute = require("./routes/adminRoute");
 const hotelRoute = require("./routes/hotelRoute");
 const cors = require("cors");
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const options = require('./swagger/swagger.js');
 
 const app = express();
 app.use(express.json());
@@ -46,6 +46,8 @@ const options = {
 // const specs = swaggerjsdoc(options);
 app.use("/api-docs", swaggerui.serve, swaggerui.setup(swagger));
 */
+const swaggerSpec = swaggerJSDoc(options);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(5000, () => {
     console.log("http://localhost:5000");

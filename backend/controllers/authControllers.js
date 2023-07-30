@@ -17,10 +17,11 @@ module.exports.signup_post = async (req, res) => {
         const token = createToken(user._id);
         console.log(token);
         // res.cookie('jwt',token,{httpOnly:true,maxAge:maxAge*1000});
-        res.status(201).json({ user: user._id });
+        res.status(201).json({message:'user created', user: user._id });
     } catch (err) {
         // const errors= handleErrors(err);
         console.log(err);
+        res.status(400).json({message:'unable to create user'})
     }
 };
 module.exports.login_post = async (req, res) => {
@@ -37,11 +38,11 @@ module.exports.login_post = async (req, res) => {
             res.send({ error: "Invalid credentials" });
         } else {
             const token = createToken(user._id);
-            res.send({ token: token });
+            res.status(201).json({message:'Logged In Successfully' , token: token });
         }
     } catch (err) {
         // const errors = handleErrors(err);
-        res.send({ error: err.message });
+        res.status(400).json({message:'Error logging In' ,error: err.message });
     }
 
     // res.send('userLogin');

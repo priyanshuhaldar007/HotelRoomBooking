@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
 import "../assets/Styles/Home.css";
 import { BsArrowRight } from "react-icons/bs";
+import { useState } from "react";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 export default function HomeInput() {
+    const [city, setCity] = useState("");
+    const navigate = useNavigate();
+
+    const searchCity = () => {
+        navigate({
+            pathname: "/hotels",
+            search: createSearchParams({
+              cityName: city,
+            }).toString(),
+        });
+    };
+
     return (
         <div className="HomeInput SectionParent">
             <div className="svgParent">
@@ -40,8 +54,10 @@ export default function HomeInput() {
                         type="text"
                         name="CityName"
                         placeholder="Enter City Name"
+                        value={city}
+                    onChange={(e) => setCity(e.target.value)}
                     />
-                    <Link to='/hotels' className="button">
+                    <Link to='/hotels' className="button" onClick={searchCity}>
                         <BsArrowRight />
                     </Link>
                 </div>

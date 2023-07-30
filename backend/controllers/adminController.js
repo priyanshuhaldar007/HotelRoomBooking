@@ -1,9 +1,7 @@
 const Hotel = require('../models/Hotels')
 
 module.exports.addHotel_post = async (req, res) => {
-    const hotelData = req.body;
-    // console.log(data);
-    
+    const hotelData = req.body;    
     try{
         const hotel = await Hotel.create(hotelData);
         console.log(hotel);
@@ -15,9 +13,7 @@ module.exports.addHotel_post = async (req, res) => {
 };
 
 module.exports.getHotel_get = async (req, res) => {
-    const hotelData = req.body;
-    // console.log(data);
-    
+    const hotelData = req.body;    
     try{
         const hotel = await Hotel.find();
         hotel.forEach(ele=>{

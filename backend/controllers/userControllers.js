@@ -4,34 +4,65 @@ const jwt = require("jsonwebtoken");
 const Hotel = require("../models/Hotels");
 
 module.exports.userData_post = async (req, res) => {
-    const { userId, address, country } = req.body;
+    const { name, email, mob, password, address, country, token } = req.body;
     // console.log(data);
+    const userId = jwt.decode(token).id;
+    try{
     const updatedUser = await User.findByIdAndUpdate(
         userId,
-        { address: address, country: country },
+        {
+            name: name,
+            email: email,
+            mob: mob,
+            password: password,
+            address: address,
+            country: country,
+        },
         { new: true }
     );
     console.log("Updated user:", updatedUser);
-    res.send({
+    res.status(201).json({message:'user updated successfully',updatedDetails:{
         name: updatedUser.name,
         email: updatedUser.email,
         mob: updatedUser.mob,
         address: updatedUser.address,
         country: updatedUser.country,
-    });
+    }});
+}
+catch(err){
+    console.log(err.message);
+    res.status(401).json({message:'Error updating details'})
+}
 };
 
 module.exports.userData_get = async (req, res) => {
     const userId = jwt.decode(req.query.token).id;
-    const user = await User.findById(userId);
-    const response = {
-        name: user.name,
-        email: user.email,
-        mob: user.mob,
-        address: user.address,
-        country: user.country,
-    };
-    res.send(response);
+    try {
+        const user = await User.findById(userId);
+        if (user) {
+            const response = {
+                name: user.name,
+                email: user.email,
+                mob: user.mob,
+                address: user.address,
+                country: user.country,
+            };
+            res.status(201).json({
+                message: "User found",
+                user: response,
+            });
+        } else {
+            res.status(401).json({
+                message: "User not found",
+            });
+        }
+    } catch (err) {
+        console.log({ error: err.message });
+        res.status(400).json({
+            message: "Error searching User",
+            error: err.message,
+        });
+    }
 };
 
 module.exports.bookHotel_post = async (req, res) => {
@@ -98,7 +129,7 @@ module.exports.bookHotel_post = async (req, res) => {
 };
 
 module.exports.userHistory_get = async (req, res) => {
-    const userId = jwt.decode(req.body.token).id;
+    const userId = jwt.decode(req.query.token).id;
     console.log(userId);
     const rowData = {
         Booking_Date: "",
@@ -131,13 +162,13 @@ module.exports.userHistory_get = async (req, res) => {
 
                 result.push(rowData);
             });
-            res.send(result);
+            res.status(201).json({message:'bookings found',history:result});
         } else {
-            res.send({ message: "no bookings found" });
+            res.status(202).json({ message: "no bookings found" });
         }
     } catch (err) {
         console.log(err.message);
-        res.send("error finding history");
+        res.status(400).json({message: "error finding history"});
     }
 };
 
